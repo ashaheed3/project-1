@@ -1,7 +1,14 @@
 // debugger;
 
+        var favorites = [];
+        var storedFavorites = JSON.parse(localStorage.getItem("favorites"));
+
+        if (storedFavorites !== null) {
+            favorites = storedFavorites;
+        }
+
         //Building my query
-          var query = "cheese";
+          var query = "strawberry";
           var apiKey = "8a284d0b537542f3a8e3f69359834a53"
           var queryURL = `https://api.spoonacular.com/recipes/search?query=${query}&apiKey=${apiKey}`;
           
@@ -18,7 +25,7 @@
                             </div>`);
             var btnsDiv = $(`<div class="d-flex justify-content-between align-items-center"></div>`);
             var btn = $(`<button type="button" class="btn btn-md btn-outline-secondary viewRecipeBtn"></button>`);
-            var likeIcon = $(`<div><i style = "color:red"class="far fa-heart like fa-2x"></i></div>`)
+            var likeIcon = $(`<div><i data-recipeId = "${recipe.id}"style = "color:red"class="far fa-heart like fa-2x"></i></div>`)
             
             buildIngredientsDiv(recipe.id, cardText,btn);
 
@@ -43,9 +50,7 @@
             method: "GET"
           }).then(function(response){ 
 
-            console.log(response);
             var source = response.sourceUrl;
-            console.log(source);
 
             var sourceLink =$(`<a href="${source}">View Recipe</a>`)
             btn.append(sourceLink);
@@ -69,7 +74,6 @@
             method: "GET"
           }).then(function(response){ 
             recipeResults = response.results;
-            console.log(recipeResults);
             for (var i = 0; i < 10; i++){
                  buildRecipeCard(recipeResults[i]);
             }
@@ -80,8 +84,25 @@
           // Toggle like button on click
 
         $("body").delegate(".like", "click", function(){
-        
+            
+            var recipe = $(this).attr("data-recipeid");
+            $(this).toggleClass("fa");
 
-              $(this).toggleClass("fa");
+
+            if($(this).hasClass("fa")){
+                
+               
+              favorites.push(recipe);
+              
+
+            }else{
+
+                if (-1 < favorites.indexOf(recipe)){
+                    favorites.splice(favorites.indexOf(recipe),1);
+                }
+                  
+            }
+
+            localStorage.setItem("favorites", JSON.stringify(favorites));
 
           });
