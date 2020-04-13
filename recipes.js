@@ -9,7 +9,7 @@
 
         //Building my query
           var query = "strawberry";
-          var apiKey = "8a284d0b537542f3a8e3f69359834a53"
+          var apiKey = "b42c4702dace43f3a8eab57371424152"
           var queryURL = `https://api.spoonacular.com/recipes/search?query=${query}&apiKey=${apiKey}`;
           
         function buildRecipeCard(recipe){
@@ -25,12 +25,20 @@
                             </div>`);
             var btnsDiv = $(`<div class="d-flex justify-content-between align-items-center"></div>`);
             var btn = $(`<button type="button" class="btn btn-md btn-outline-secondary viewRecipeBtn"></button>`);
-            var likeIcon = $(`<div><i data-recipeId = "${recipe.id}"style = "color:red"class="far fa-heart like fa-2x"></i></div>`)
+            var likeDiv = $(`<div></div>`)
+            //debugger;
+            var likeIcon = $(`<i data-recipeId = "${recipe.id}"style = "color:red"class="far fa-heart like fa-2x"></i>`)
+
+            if (-1 < favorites.indexOf(`${recipe.id}`)){
+                likeIcon.addClass("fa");
+            }
             
+            likeDiv.append(likeIcon);
+
             buildIngredientsDiv(recipe.id, cardText,btn);
 
            btnsDiv.append(btn);
-           btnsDiv.append(likeIcon);
+           btnsDiv.append(likeDiv);
 
             cardBody.append(cardText);
             cardBody.append(btnsDiv);
@@ -38,11 +46,13 @@
             card.append(cardBody);
             col.append(card);
             recipeContainer.append(col);
+
+            
         }
         
         function buildIngredientsDiv(recipeId, cardText, btn){
          
-          var apiKey = "8a284d0b537542f3a8e3f69359834a53"
+          var apiKey = "b42c4702dace43f3a8eab57371424152"
           var queryURL = `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=${apiKey}`;
 
           $.ajax({

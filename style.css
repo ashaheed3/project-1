@@ -4,6 +4,8 @@ img{
   height: "225";
 }
 
-button{
-  margin-top: 10px;
+
+
+.notInKitchen{
+  color:red;
 }
