@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,9 +15,9 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">  
         <link rel="icon" href="images/favicon.png">
-        <title>Sauce Code</title>
+        <title>The Sauce Code</title>
     </head>
-        <header>     
+        <!-- <header>     
             <ol class="header">
                 <li class="logo"><a><img id="sauceLogo" alt="Logo" src="images/sauceCodeLogo2.png"></a></li>
                 <div id="textLogo">Code Sauce</div>
@@ -28,6 +27,7 @@
             </ol>
         </header>
         <nav>
+          <div class = "col-md-12">
             <ul class="menu">
                 <li class="logo"><a href="home.html">Home</a></li>
                 <li class="item"><a href="favorites.html">Favorites</a></li>
@@ -35,18 +35,46 @@
                 <li class="item"><a href="meals.html">Meal Preferences</a></li>
                 </li>
             </ul>
-        </nav>
+            </div>
+        </nav> -->
 
-        <main class="jumbotron">
-                <h1 class="display-3">What's in your Kitchen?</h1>
-        </main>
-        <form>
-            <div class="container-fluid">  
-                  <div class="row h-100">
-                    <p class="col-md-1 my-auto time-block">Ingredient 1</p>
-                    <div class="inputText col-md-9"><input type="text" name="local" class="form-control" id="textarea"  placeholder="Enter Ingredients Here"></div><button type="button" class="saveBtn col-sm-1">Save</button>
-                  </div>
-        </form>
+            <div class="clearfix">
+                <div class = "col-md-12">
+                <div class="col-md-6 card">
+                  <form>
+                  <h2>What's in you Kitchen?</h2>
+                  <div class = "card-body">
+                    <h3>Dairy</h3>
+                      <ul id = "dairyItems"></ul>
+                        <h3>Produce</h3>
+                          <ul id = "produceItems"></ul>
+                            <h3>Meat</h3>
+                              <ul id = "meatItems"></ul>
+                                <h3>Seafood</h3>
+                                   <ul id = "seafoodItems"></ul>
+                                   <h3>Pantry</h3>
+                                   <ul id = "pantryItems"></ul>
+                                </div>
+                            </div>
+                       </form>
+                   <aside>
+                    <div class="card-two">
+                      <h2>Meal Ingredients</h2>
+                      <p class="meal"><strong>Produce:</strong> <span id="produce-ingredients"></span></p>
+                      <p class="meal"><strong>Meat:</strong> <span id="meat-ingredients"></span></p>
+                      <p class="meal"><strong>Pantry:</strong> <span id="pantry-ingredients"></span></p>
+                    <button id="recipes">See Recipes</button>
+                    </div>
+                  </div> 
+                    </div>     
+                </aside>
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="myKitchen.js"></script>
 </body>
 </html>
