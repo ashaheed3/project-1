@@ -76,7 +76,7 @@ nav {
   .card-two {
     background-color: #fff;
     background-image: url("images/foodFive.jpg");
-    background-size: 950px;
+    background-size: 1050px;
     background-position: bottom;
     border: 1px solid #eceff1;
     border-radius: 8px;
@@ -255,7 +255,7 @@ li button:hover {
 
 .btn:hover {
     color: white;
-    background-color: #FAD09F;
+    background-color: transparent;
     font-weight: bold;
 }
 

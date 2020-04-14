@@ -16,7 +16,7 @@ dairyItems = $("#dairyItems")
 dairyAlt.forEach(item => {
    var li = $(`<li>${item[0]}</li>`)
    li.attr(`data-id`,item[1])
-   var button = (`<button class = "btn btn-secondary">Add Item</button>`);
+   var button = $(`<button type = button class = "btn btn-secondary">Add Item</button>`);
    li.append(button);
    dairyItems.append(li);
 });             
@@ -36,7 +36,7 @@ produceItems = $("#produceItems")
 produceAlt.forEach(item => {
    var li = $(`<li>${item[0]}</li>`)
    li.attr(`data-id`,item[1])
-   var button = (`<button class = "btn btn-secondary">Add Item</button>`);
+   var button = $(`<button type = button class = "btn btn-secondary">Add Item</button>`);
    li.append(button);
    produceItems.append(li);
 });             
@@ -56,7 +56,7 @@ meatItems = $("#meatItems")
 meatAlt.forEach(item => {
    var li = $(`<li>${item[0]}</li>`)
    li.attr(`data-id`,item[1])
-   var button = (`<button class = "btn btn-secondary">Add Item</button>`);
+   var button = $(`<button type = button class = "btn btn-secondary">Add Item</button>`);
    li.append(button);
    meatItems.append(li);
 });  
@@ -75,7 +75,7 @@ seafoodItems = $("#seafoodItems")
 seafoodAlt.forEach(item => {
    var li = $(`<li>${item[0]}</li>`)
    li.attr(`data-id`,item[1])
-   var button = (`<button class = "btn btn-secondary">Add Item</button>`);
+   var button = $(`<button type = button class = "btn btn-secondary">Add Item</button>`);
    li.append(button);
    seafoodItems.append(li);
 });  
@@ -94,7 +94,69 @@ pantryItems = $("#pantryItems")
 pantryAlt.forEach(item => {
    var li = $(`<li>${item[0]}</li>`)
    li.attr(`data-id`,item[1])
-   var button = (`<button class = "btn btn-secondary">Add Item</button>`);
+   var button = $(`<button type = button class = "btn btn-secondary">Add Item</button>`);
    li.append(button);
    pantryItems.append(li);
 });  
+
+var dairyInput = document.querySelector("#dairyItems");
+var produceInput = document.querySelector("#produceItems");
+var meatInput = document.querySelector("#meatItems");
+var pantryInput = document.querySelector("#pantryItems");
+var seafoodInput = document.querySelector("#seafoodItems");
+var addItem = document.querySelector(".btn");
+
+
+renderMealIngredients()
+
+// need a function to display ingredients on app 
+function displayIngredients(type, message){
+   msgDairyDiv.textContent = message;
+   msgDairyDiv.setAttribute("class", type);
+}
+
+// need a function to retrieve stored items from local storage 
+function renderMealIngredients(){
+   var dairy = JSON.parse(localStorage.getItem("dairyItems"));
+   var produce = JSON.parse(localStorage.getItem("produceItems"));
+   var meat = JSON.parse(localStorage.getItem("meatItems"));
+   var seafood = JSON.parse(localStorage.getItem("seafoodItems"));
+   var pantry = JSON.parse(localStorage.getItem("pantryItems"));
+
+   if (dairy && produce && meat && seafood && pantry === null) {
+      return;
+   }
+
+   dairyIngredientsSpan.textContent = dairy;
+   produceIngredientsSpan.textContent = produce;
+   meatIngredients.textContent = meat;
+   seafoodIngredients.textContent = seafood;
+   pantryIngredients.textContent = pantry;
+
+}
+
+// need a fuction for when user add an item we need to save it to the local storage 
+   addItem.addEventListener("click", function(event){
+      event.preventDefault();
+     
+      var dairy = document.querySelector("#dairyItems").value;
+      var produce = document.querySelector("#produceItems").value;
+      var meat = document.querySelector("#meatItems").value;
+      var seafood = document.querySelector("#seafoodItems").value;
+      var pantry = document.querySelector("#pantryItems").value;
+
+  if (dairy && produce && meat && seafood && pantry === "" ){
+     displayMessage("test")
+  }
+
+   localStorage.setItem("dairyitems",JSON.stringify(dairyitems));
+   localStorage.setItem("produceitems", JSON.stringfiy(produce));
+   localStorage.setItem("meatitems", JSON.stringfiy (meat));
+   localStorage.setItem("pantryitems",  JSON.stringfiy (pantry));
+   localStorage.setItem("seafood", JSON.stringfiy (seafood));
+   renderMealIngredients();
+
+
+})
+
+

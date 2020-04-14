@@ -1,10 +1,5 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>myFrig</title>
-</head>
-<body>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,8 +10,9 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">  
         <link rel="icon" href="images/favicon.png">
-        <title>The Sauce Code</title>
+        <title>My Kitchen</title>
     </head>
+    <body>
         <!-- <header>     
             <ol class="header">
                 <li class="logo"><a><img id="sauceLogo" alt="Logo" src="images/sauceCodeLogo2.png"></a></li>
@@ -46,13 +42,18 @@
                   <div class = "card-body">
                     <h3>Dairy</h3>
                       <ul id = "dairyItems"></ul>
+                      <div id="msgDairy"></div>
                         <h3>Produce</h3>
                           <ul id = "produceItems"></ul>
+                          <div id="msgProduce"></div>
                             <h3>Meat</h3>
                               <ul id = "meatItems"></ul>
+                              <div id="msgMeat"></div>
                                 <h3>Seafood</h3>
                                    <ul id = "seafoodItems"></ul>
+                                   <div id="msgSeafood"></div>
                                    <h3>Pantry</h3>
+                                   <div id="msgPantry"></div>
                                    <ul id = "pantryItems"></ul>
                                 </div>
                             </div>
@@ -60,8 +61,10 @@
                    <aside>
                     <div class="card-two">
                       <h2>Meal Ingredients</h2>
+                      <p class="meal"><strong>Dairy:</strong> <span id="produce-ingredients"></span></p>
                       <p class="meal"><strong>Produce:</strong> <span id="produce-ingredients"></span></p>
                       <p class="meal"><strong>Meat:</strong> <span id="meat-ingredients"></span></p>
+                      <p class="meal"><strong>Seafood:</strong> <span id="meat-ingredients"></span></p>
                       <p class="meal"><strong>Pantry:</strong> <span id="pantry-ingredients"></span></p>
                     <button id="recipes">See Recipes</button>
                     </div>
