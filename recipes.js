@@ -1,5 +1,6 @@
 // debugger;
 
+        var kitchenIngredients = [];
         var favorites = [];
         var storedFavorites = JSON.parse(localStorage.getItem("favorites"));
 
@@ -8,8 +9,8 @@
         }
 
         //Building my query
-          var query = "strawberry";
-          var apiKey = "b42c4702dace43f3a8eab57371424152"
+          var query = localStorage.getItem("keyword");
+          var apiKey = ""
           var queryURL = `https://api.spoonacular.com/recipes/search?query=${query}&apiKey=${apiKey}`;
           
         function buildRecipeCard(recipe){
@@ -52,7 +53,7 @@
         
         function buildIngredientsDiv(recipeId, cardText, btn){
          
-          var apiKey = "b42c4702dace43f3a8eab57371424152"
+          var apiKey = ""
           var queryURL = `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=${apiKey}`;
 
           $.ajax({
@@ -68,7 +69,12 @@
             
                 recipeIngredients.forEach(ingredient => {
                     // debugger;
-                    var ingredientTxt = $(`<div>${ingredient.name}</div>`);
+                    var ingredientTxt = $(`<div data-id = "${ingredient.id}">${ingredient.name}</div>`);
+
+                    if (-1 == kitchenIngredients.indexOf(`${ingredient.id}`)){
+                        ingredientTxt.addClass("notInKitchen")
+                    }
+
                     cardText.append(ingredientTxt);
                 });
             
@@ -100,19 +106,20 @@
 
 
             if($(this).hasClass("fa")){
-                
-               
               favorites.push(recipe);
-              
-
             }else{
-
                 if (-1 < favorites.indexOf(recipe)){
                     favorites.splice(favorites.indexOf(recipe),1);
                 }
-                  
             }
 
             localStorage.setItem("favorites", JSON.stringify(favorites));
 
-          });
+        });
+
+        $("#search").on("click",function(){
+
+            // event.preventDefault();
+            query = $("#keyword").val();
+            localStorage.setItem("keyword",query);
+        })
