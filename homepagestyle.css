@@ -1,5 +1,5 @@
 #headertext {
-    color: #e09041ff;
+    color: #d42926;
 }
 
 .fa-facebook-square{ 
@@ -37,5 +37,19 @@
 #sauceLogo {
     width: 60px;
     height: auto;
-
 }
+
+body,
+.card {
+    background-color: #fad09f;
+    color: #d42926;
+  }
+
+ .card-deck {
+     margin: 20px;
+ }
+
+ .card-title {
+     align-content: center;
+ }
+
