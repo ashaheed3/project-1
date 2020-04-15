@@ -1,18 +1,15 @@
-#headertext {
+body {
+    background-color: #fad09f;
     color: #d42926;
+  }
+
+#headertext {
+    font-family: 'Montez', cursive;
+    font-size: 75px;
+    color: #d42926;
+    text-align: center;
 }
 
-.fa-facebook-square{ 
-    color: rgb(0, 153, 255);
-}
-
-.fa-twitter-square{ 
-        color: rgb(0, 153, 255);
-    }
-
-.fa-instagram-square{ 
-            color: rgb(0, 153, 255);
-        }
 
 .carousel {
     margin-top: 30px;
@@ -39,17 +36,18 @@
     height: auto;
 }
 
-body,
-.card {
+.card-deck {
+     margin: 80px;   
+ }
+.card-body {
     background-color: #fad09f;
-    color: #d42926;
-  }
 
- .card-deck {
-     margin: 20px;
- }
+}
+.card-title {
+    font-family: 'Montez', cursive;
+    font-size: 40px;
+    color: #d42926;}
+   
 
- .card-title {
-     align-content: center;
- }
+ 
 

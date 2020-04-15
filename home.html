@@ -12,8 +12,12 @@
     <link 
       rel="stylesheet" 
       href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+      <link href="https://fonts.googleapis.com/css2?family=Montez&display=swap" 
+      rel="stylesheet">
     
-    <link rel="stylesheet" href="homepagestyle.css"/>
+    <link 
+      rel="stylesheet" href="homepagestyle.css"/>
     
     <title>The Sauce Code</title>
   </head>
@@ -21,16 +25,9 @@
   <body>
     <!--Header-->
     <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        </div>
-      <div class="col-sm-4">
-        <h1 id="headertext">The Sauce Code</h1>
-        </div>
-        <div class="col-sm-4 header">
-          <a href="www.facebook.com" target="blank" title="Facebook">  <h2 class="fab fa-facebook-square"></h2></a>
-          <a href="www.twitter.com" target="blank" title="Twitter">  <h2 class="fab fa-twitter-square"></h2></a>
-          <a href="www.instagram.com" target="blank" title="instagram">  <h2 class="fab fa-instagram"></h2></a>  
+    <div class="row">  
+      <div class="col-sm-12"> 
+        <h1 id="headertext"><span><img id="sauceLogo" alt="Logo" src="images/sauceCodeLogo2.png"></span>The Sauce Code</h1>
         </div>
     </div>
   </div>
@@ -38,24 +35,16 @@
 
   <!--Nav bar with logo-->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #d42926">
-      <a class="navbar-brand" href="#"><img id="sauceLogo" alt="Logo" src="images/sauceCodeLogo2.png"></a>
-        <a class="navbar-brand" href="#">The Sauce Code</a>
-        <div class="d-flex justify-content-end">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ml-auto">
             <li><a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a></li>
-            <li><a class="nav-item nav-link" href="#">My Favorites</a></li>
-            <li><a class="nav-item nav-link" href="#">My Preferences</a></li>
+            <li><a class="nav-item nav-link" href="#">Meal Preferences</a></li>
             <li><a class="nav-item nav-link" href="#">My Kitchen</a></li>
+            <li><a class="nav-item nav-link" href="#">Favorites</a></li>
           </ul>
-          <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0 fas fa-search" type="submit"></button>
-          </form>
-        </div>
     </div>
       </nav>
 
@@ -87,25 +76,31 @@
         </a>
       </div>
   
-
+    <!--Image card div-->
       <div class="card-deck">
-        <div class="card">
+        <div class="card border-0">
           <div class="card-body">
-            <h5 class="card-title">My Favorites</h5>
+            <div class="card-block text-center">
+            <a href="#"><h5 class="card-title">Meal Preferences</h5></a>
           </div>
           <img src="Images/recipe-2508859_640.jpg"  class="card-img-top" alt="...">
         </div>
-        <div class="card">
+        </div>
+        <div class="card border-0">
           <div class="card-body">
-            <h5 class="card-title">My Kitchen</h5>
+            <div class="card-block text-center">
+            <a href="#"><h5 class="card-title">My Kitchen</h5></a>
           </div>
           <img src="Images/kitchen.jpg" class="card-img-top" alt="...">
         </div>
-        <div class="card">
+        </div>
+        <div class="card border-0">
           <div class="card-body">
-            <h5 class="card-title">My Preferences</h5>
+            <div class="card-block text-center">
+            <a href="#"><h5 class="card-title">Favorites</h5></a>
           </div>
           <img src="Images/asparagus-2169305_640.jpg" class="card-img-top" alt="...">
+        </div>
         </div>
       </div>
   

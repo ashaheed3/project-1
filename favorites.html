@@ -4,60 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link 
+      rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+      crossorigin="anonymous">
+    
+    <link 
+      rel="stylesheet" 
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+      <link href="https://fonts.googleapis.com/css2?family=Montez&display=swap" 
+      rel="stylesheet">
 
-    <link href="favorites-style.css" rel="stylesheet">
+    <link 
+        href="favorites-style.css" 
+        rel="stylesheet">
 
-    <title>My Favorites</title>
+    <title>Favorites</title>
 
 </head>
+
 <body>
-
-    
-        <!--Header-->
-    <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            </div>
-          <div class="col-sm-4">
-            <h1 id="headertext">The Sauce Code</h1>
-            </div>
-            <div class="col-sm-4 header">
-              <a href="www.facebook.com" target="blank" title="Facebook">  <h2 class="fab fa-facebook-square"></h2></a>
-              <a href="www.twitter.com" target="blank" title="Twitter">  <h2 class="fab fa-twitter-square"></h2></a>
-              <a href="www.instagram.com" target="blank" title="instagram">  <h2 class="fab fa-instagram"></h2></a>  
-            </div>
+  <!--Header-->
+  <div class="container">
+    <div class="row">  
+      <div class="col-sm-12"> 
+        <h1 id="headertext"><span><img id="sauceLogo" alt="Logo" src="images/sauceCodeLogo2.png"></span>The Sauce Code</h1>
         </div>
-      </div>
+    </div>
+  </div>
 
-       <!--Nav bar with logo-->
+
+  <!--Nav bar with logo-->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #d42926">
-        <a class="navbar-brand" href="#"><img id="sauceLogo" alt="Logo" src="images/sauceCodeLogo2.png"></a>
-          <a class="navbar-brand" href="#">The Sauce Code</a>
-          <div class="d-flex justify-content-end">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ul class="navbar-nav">
-              <li><a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a></li>
-              <li><a class="nav-item nav-link" href="#">My Favorites</a></li>
-              <li><a class="nav-item nav-link" href="#">My Preferences</a></li>
-              <li><a class="nav-item nav-link" href="#">My Kitchen</a></li>
-            </ul>
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-light my-2 my-sm-0 fas fa-search" type="submit" id="searchBtn"></button>
-            </form>
-          </div>
-      </div>
-        </nav>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav ml-auto">
+            <li><a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a></li>
+            <li><a class="nav-item nav-link" href="#">Meal Preferences</a></li>
+            <li><a class="nav-item nav-link" href="#">My Kitchen</a></li>
+            <li><a class="nav-item nav-link" href="#">Favorites</a></li>
+          </ul>
+    </div>
+      </nav>
       
 
-      <main role="main">
-
+      <section id="main">
       
         <div class="album py-5 bg-light">
           <div class="container">
@@ -174,7 +169,7 @@
         </div>
          
       
-      </main>
+    </section>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
