@@ -11,7 +11,7 @@
         //Get kitchen items from local storage
 
         function getKitchenItems(){
-
+          debugger;
           var dairy =  JSON.parse(localStorage.getItem("dairyAlt"));
           var produce =  JSON.parse(localStorage.getItem("produceAlt"));
           var meat =  JSON.parse(localStorage.getItem("meatAlt"));
@@ -40,8 +40,10 @@
 
         }
           
+        getKitchenItems();
+
         var query = localStorage.getItem("keyword");
-          var apiKey = "8782d74ea56e448b8fbd7ab3bed941ad"
+          // var apiKey = "b42c4702dace43f3a8eab57371424152"
           var queryURL = `https://api.spoonacular.com/recipes/search?query=${query}&apiKey=${apiKey}`;
           
         function buildRecipeCard(recipe){
@@ -88,7 +90,7 @@
         
         function buildIngredientsDiv(recipeId, cardText, btn){
          
-          var apiKey = "8782d74ea56e448b8fbd7ab3bed941ad"
+          // var apiKey = "b42c4702dace43f3a8eab57371424152"
           var queryURL = `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=${apiKey}`;
 
           $.ajax({
@@ -107,8 +109,8 @@
                     // debugger;
                     var ingredientTxt = $(`<div data-id = "${ingredient.id}">${ingredient.name}</div>`);
 
-                    if (-1 == kitchenIngredients.indexOf(`${ingredient.id}`)){
-                        ingredientTxt.addClass("notInKitchen")
+                    if (!(-1 == kitchenIngredients.indexOf(`${ingredient.id}`))){
+                        ingredientTxt.addClass("inKitchen")
                     }
 
                     cardText.append(ingredientTxt);
