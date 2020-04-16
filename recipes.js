@@ -8,18 +8,50 @@
             favorites = storedFavorites;
         }
 
-        //Building my query
-          var query = localStorage.getItem("keyword");
-          var apiKey = ""
-          var queryURL = `https://api.spoonacular.com/recipes/search?query=${query}&apiKey=${apiKey}`;
+        //Get kitchen items from local storage
+
+        function getKitchenItems(){
+
+          var dairy =  JSON.parse(localStorage.getItem("dairyAlt"));
+          var produce =  JSON.parse(localStorage.getItem("produceAlt"));
+          var meat =  JSON.parse(localStorage.getItem("meatAlt"));
+          var seafood =  JSON.parse(localStorage.getItem("seafoodAlt"));
+          var pantry =  JSON.parse(localStorage.getItem("pantryAlt"));
+
+          dairy.forEach(element => {
+            kitchenIngredients.push(element[1]);
+          });
+
+          produce.forEach(element => {
+            kitchenIngredients.push(element[1]);
+          });
+
+          meat.forEach(element => {
+            kitchenIngredients.push(element[1]);
+          });
+
+          seafood.forEach(element => {
+            kitchenIngredients.push(element[1]);
+          });
+
+          pantry.forEach(element => {
+            kitchenIngredients.push(element[1]);
+          });
+
+        }
+          
           
         function buildRecipeCard(recipe){
 
+          var query = localStorage.getItem("keyword");
+          var apiKey = "8782d74ea56e448b8fbd7ab3bed941ad"
+          var queryURL = `https://api.spoonacular.com/recipes/search?query=${query}&apiKey=${apiKey}`;
+         
             var baseUri = "https://spoonacular.com/recipeImages/";
             var recipeContainer = $("#recipeContainer");
             var col = $(`<div class="col-md-4"></div>`);
             var card = $(`<div class="card mb-4 shadow-sm"></div>`);
-            var img = $(`<img class = "recipeImg" src = "${baseUri+recipe.image}" width="100%" height="225"><h4>${recipe.title}</h4></img>`);
+            var img = $(`<img class = "recipeImg" src = "${baseUri+recipe.image}" alt = "${recipe.title}" width="100%" height="225"><h4>${recipe.title}</h4></img>`);
             var cardBody = $(`<div class="card-body"></div>`);
             var cardText = $(`<div class = "card-text ingredients">
                             <h6>Ingredients</h6>
@@ -50,10 +82,12 @@
 
             
         }
+
+        function getNutritionInfo{}
         
         function buildIngredientsDiv(recipeId, cardText, btn){
          
-          var apiKey = ""
+          var apiKey = "8782d74ea56e448b8fbd7ab3bed941ad"
           var queryURL = `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=${apiKey}`;
 
           $.ajax({
@@ -65,6 +99,7 @@
 
             var sourceLink =$(`<a href="${source}">View Recipe</a>`)
             btn.append(sourceLink);
+           
             recipeIngredients = response.extendedIngredients;
             
                 recipeIngredients.forEach(ingredient => {
@@ -90,6 +125,8 @@
             method: "GET"
           }).then(function(response){ 
             recipeResults = response.results;
+
+            debugger;
             for (var i = 0; i < 10; i++){
                  buildRecipeCard(recipeResults[i]);
             }
