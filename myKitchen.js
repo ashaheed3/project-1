@@ -75,6 +75,7 @@ var savedItems = [];
    console.log(savedItems)
 
    getUserIngredients()
+   
    function getUserIngredients(){
       var storedDairy = JSON.parse(localStorage.getItem("savedItems"));
       var storedProduce = JSON.parse(localStorage.getItem("savedItems"));
@@ -88,7 +89,7 @@ var savedItems = [];
  
       
    }
- 
+  
    
 
 var addItem = $(".btn");
@@ -98,12 +99,26 @@ var addItem = $(".btn");
         var selectedItem = $(event.target);
         console.log(selectedItem.data("id"))
        event.preventDefault();
-
        
-       saveDairyItem = dairyAlt.find(item => item.id == selectedItem.data("id"));
-       savedItems.push(dairyAlt);
-       localStorage.setItem("dairyAlt",JSON.stringify(dairyAlt)); 
+      //   if (typeof(Storage) !== "") {
+      //              saveDairyItem = dairyAlt.find(item => item.id == selectedItem.data("id"));
+      //              savedItems.push(dairyAlt);
+      //             localStorage.setItem("dairyAlt",JSON.stringify(dairyAlt)); 
+      //             document.getElementById("dairy-ingredients").innerHTML = localStorage.getItem("dairyAlt");
+      //  }
+      
+       if (typeof(Storage) !== "") {
+       saveDairyItem = dairyAlt.find(item => item.name == selectedItem.data(name));
+       savedItems.push(dairyAlt.name);
+       localStorage.setItem(dairyAlt.name,JSON.stringify(dairyAlt.name)); 
+       document.getElementById("dairy-ingredients").innerHTML = localStorage.getItem(dairyAlt.name);
+      alert(dairyAlt[0].name);
+      //grabs just the name 
+      console.log(dairyAlt[0].name);
+       }
 
+          
+     
        saveProduceItem = produceAlt.find(item => item.id == selectedItem.data("id"));
        savedItems.push(produceAlt);
        localStorage.setItem("produceAlt",JSON.stringify(produceAlt));  
@@ -123,3 +138,4 @@ var addItem = $(".btn");
         
     getUserIngredients() 
     });
+
