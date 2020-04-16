@@ -40,12 +40,13 @@
 
         }
           
+        var query = localStorage.getItem("keyword");
+          var apiKey = "8782d74ea56e448b8fbd7ab3bed941ad"
+          var queryURL = `https://api.spoonacular.com/recipes/search?query=${query}&apiKey=${apiKey}`;
           
         function buildRecipeCard(recipe){
 
-          var query = localStorage.getItem("keyword");
-          var apiKey = "8782d74ea56e448b8fbd7ab3bed941ad"
-          var queryURL = `https://api.spoonacular.com/recipes/search?query=${query}&apiKey=${apiKey}`;
+          
          
             var baseUri = "https://spoonacular.com/recipeImages/";
             var recipeContainer = $("#recipeContainer");
@@ -83,7 +84,7 @@
             
         }
 
-        function getNutritionInfo{}
+        function getNutritionInfo(){}
         
         function buildIngredientsDiv(recipeId, cardText, btn){
          
