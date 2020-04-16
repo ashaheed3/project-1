@@ -1,155 +1,125 @@
-// user need to click add item  button to save items 
-// user selection will need to be save to local storage 
-        // push data to an array for future use 
-            // Once data is saved the local storage then the user will see indegrients on the client 
-            var dairy = [["egg whites", "1124"],
-            [""]
-];
-var dairyAlt = [ ["almond milk", "93607"],
-               ["coconut milk", "12118"],
-               ["dairy free milk", "10016223"],
-               ["rice milk", "93761"],
-               ["soy milk", "16223"],
-               ["egg substitute", "1226"]
+var dairyAlt = [
+   {name: "almond milk", id: "93607"},
+   {name: "coconut milk", id: "12118"}, 
+   {name: "dairy free milk", id: "10016223"},
+   {name: "soy milk", id: "16223"},
+   {name: "egg substitute", id: "1226"},
 ];
 dairyItems = $("#dairyItems")
 dairyAlt.forEach(item => {
-   var li = $(`<li>${item[0]}</li>`)
-   li.attr(`data-id`,item[1])
-   var button = (`<button type = button class = "btn btn-secondary">Add Item</button>`);
-   li.append(button);
-   dairyItems.append(li);
-});             
+   dairyItems.append(`
+   <li data-id="${item.id}">${item.name}<button type="button" data-id="${item.id}"  class="btn btn-secondary">Add Item</button></li> 
+   `)
+})  
 
-var produce = [["asparagus spears", "11011"],
-            [""]
-];
-var produceAlt = [ ["acorn squash", "11482"],
-               ["avocado", "9037"],
-               ["baby bell peppers", "10311821"],
-               ["broccoli", "11090"],
-               ["brussel sprouts" , "11098"],
-               ["carrots" , "11124"]
+var produceAlt = [
+   {name: "asparagus spears", id: "11011"},
+   {name: "avocado", id: "9037"}, 
+   {name: "broccoli", id: "11090"},
+   {name: "brussel sprouts", id: "11098"},
+   {name: "carrots", id: "11124"},
 ];
 produceItems = $("#produceItems")
 produceAlt.forEach(item => {
-   var li = $(`<li>${item[0]}</li>`)
-   li.attr(`data-id`,item[1])
-   var button = $(`<button type = button class = "btn btn-secondary">Add Item</button>`);
-   li.append(button);
-   produceItems.append(li);
-}); 
-
-var meat = [["beef brisket" , "13023"],
-            [""]
-];
-var meatAlt = [ ["beef chuck roast" , "13786"],
-               ["beef tenderloin" , "13926"],
-               ["boneless skinless chicken breast" , "1055062"],
-               ["chicken sausage" , "93668"],
-               ["lean pork tenderloin" , "10060"],
-               ["pork chops" , "10010062"]
-];
-meatItems = $("#meatItems")
-meatAlt.forEach(item => {
-   var li = $(`<li>${item[0]}</li>`)
-   li.attr(`data-id`,item[1])
-   var button = $(`<button type = button class = "btn btn-secondary">Add Item</button>`);
-   li.append(button);
-   meatItems.append(li);
-});  
-
-
-var seafood = [["cat fish filets" , "15010"],
-            [""]
-];
-var seafoodAlt = [ ["raw shrimp" , "15152"],
-               ["crabmeat" , "10015136"],
-               ["clams", "15157"],
-               ["mussels" , "15164"],
-               ["salmon fillet" , "15076"],
-               ["sea scallops" , "10015172"]
-];
-seafoodItems = $("#seafoodItems")
-seafoodAlt.forEach(item => {
-   var li = $(`<li>${item[0]}</li>`)
-   li.attr(`data-id`,item[1])
-   var button = $(`<button type = button class = "btn btn-secondary">Add Item</button>`);
-   li.append(button);
-   seafoodItems.append(li);
-}); 
-
-var pantry = [["cat fish filets" , "15010"],
-            [""]
-];
-var pantryAlt = [ ["fettuccine" , "100204092"],
-               ["spaghetti" , "11420420"],
-               ["rotini pasta" , "11320420"],
-               ["short grain rice" , "10120052"],
-               ["extra virgin olive oil:" , "1034053"],
-               ["flour" , "20081"]
-];
-pantryItems = $("#pantryItems")
-pantryAlt.forEach(item => {
-   var li = $(`<li>${item[0]}</li>`)
-   li.attr(`data-id`,item[1])
-   var button = $(`<button type = button class = "btn btn-secondary">Add Item</button>`);
-   li.append(button);
-   pantryItems.append(li);
-});  
-
-// create variables to stored ingredients' data and ids in local storage 
-
-var savedItems = [];
-   console.log(savedItems)
-
-   var dairyIngredients = dairyAlt;
-
-   savedItems.push(dairyAlt);
-   localStorage.setItem("dairyAlt",JSON.stringify(dairyAlt));
-   var storedDairy = JSON.parse(localStorage.getItem("dairyAlt"));
-   console.log(storedDairy)
-  
-   var produceIngredients = produceAlt;
-
-   savedItems.push(produceAlt);
-   localStorage.setItem("produceAlt",JSON.stringify(produceAlt));
-   var storedProduce = JSON.parse(localStorage.getItem("produceAlt"));
-   console.log(storedProduce)
-
-   var meatIngredients = meatAlt;
-
-   savedItems.push(meatAlt);
-   localStorage.setItem("meatAlt",JSON.stringify(meatAlt));
-   var storedMeat = JSON.parse(localStorage.getItem("meatAlt"));
-   console.log(storedMeat)
-
-
-   var seafoodIngredients = seafoodAlt;
-
-   savedItems.push(seafoodAlt);
-   localStorage.setItem("seafoodAlt",JSON.stringify(seafoodAlt));
-   var storedSeafood = JSON.parse(localStorage.getItem("seafoodAlt"));
-   console.log(storedSeafood)
-
-   var pantryIngredients = pantryAlt;
-
-   savedItems.push(pantryAlt);
-   localStorage.setItem("pantryAlt",JSON.stringify(pantryAlt));
-   var storedPantry = JSON.parse(localStorage.getItem("pantryAlt"));
-   console.log(storedPantry)
-
-
-renderMealIngredients()
-   // need a fuction for when user add an item we need to retrieve it from the local storage append it to ingredients section 
-   var addItem = document.querySelector(".btn");
-   var mealIngredients = 
-   addItem.addEventListener("click", function(event){
-      console.log(addItem)
-      event.preventDefault();
-     
-     
- 
+   produceItems.append(`
+   <li data-id="${item.id}">${item.name}<button type="button" data-id="${item.id}"  class="btn btn-secondary">Add Item</button></li> 
+   `)
 })
 
 
+var meatAlt = [
+   {name: "beef chuck roast", id: "13786"},
+   {name: "beef brisket", id: "13023"}, 
+   {name: "boneless skinless chicken breast", id: "1055062"},
+   {name: "lean pork tenderloins", id: "10060"},
+   {name: "pork chops", id: "10010062"},
+];
+meatItems = $("#meatItems")
+meatAlt.forEach(item => {
+   meatItems.append(`
+   <li data-id="${item.id}">${item.name}<button type="button" data-id="${item.id}"  class="btn btn-secondary">Add Item</button></li> 
+   `)
+})
+
+
+var seafoodAlt = [
+   {name: "cat fish filets", id: "15010"},
+   {name: "clams", id: "15157"}, 
+   {name: "crabmeat", id: "10015136"},
+   {name: "salmon fillet", id: "15076"},
+   {name: "sea scallops", id: "10015172"},
+];
+seafoodItems = $("#seafoodItems")
+seafoodAlt.forEach(item => {
+   seafoodItems.append(`
+   <li data-id="${item.id}">${item.name}<button type="button" data-id="${item.id}"  class="btn btn-secondary">Add Item</button></li> 
+   `)
+})
+
+var pantryAlt = [
+   {name: "fettuccine", id: "100204092"},
+   {name: "spaghetti", id: "11420420"}, 
+   {name: "rotini pasta", id: "11320420"},
+   {name: "short grain rice", id: "10120052"},
+   {name: "extra virgin olive oil", id: "1034053"},
+];
+pantryItems = $("#pantryItems")
+pantryAlt.forEach(item => {
+   pantryItems.append(`
+   <li data-id="${item.id}">${item.name}<button type="button" data-id="${item.id}"  class="btn btn-secondary">Add Item</button></li> 
+   `)
+})
+
+// create variables to stored ingredients' data and ids in local storage 
+var savedItems = [];
+   console.log(savedItems)
+
+   getUserIngredients()
+   function getUserIngredients(){
+      var storedDairy = JSON.parse(localStorage.getItem("savedItems"));
+      var storedProduce = JSON.parse(localStorage.getItem("savedItems"));
+      var storedMeat = JSON.parse(localStorage.getItem("savedItems"));
+      var storedSeafood = JSON.parse(localStorage.getItem("savedItems"));
+      var storedPantry = JSON.parse(localStorage.getItem("savedItems"));
+
+
+
+      return  storedDairy && storedProduce && storedMeat && storedSeafood && storedPantry === null ? [] : JSON.parse(storedDairy, storedProduce, storedMeat, storedSeafood, storedPantry);
+ 
+      
+   }
+ 
+   
+
+var addItem = $(".btn");
+   
+    $(addItem).on("click", function(event){
+        console.log($(event.target))
+        var selectedItem = $(event.target);
+        console.log(selectedItem.data("id"))
+       event.preventDefault();
+
+       
+       saveDairyItem = dairyAlt.find(item => item.id == selectedItem.data("id"));
+       savedItems.push(dairyAlt);
+       localStorage.setItem("dairyAlt",JSON.stringify(dairyAlt)); 
+
+       saveProduceItem = produceAlt.find(item => item.id == selectedItem.data("id"));
+       savedItems.push(produceAlt);
+       localStorage.setItem("produceAlt",JSON.stringify(produceAlt));  
+
+       saveMeatItem = meatAlt.find(item => item.id == selectedItem.data("id"));
+       savedItems.push(meatAlt);
+       localStorage.setItem("meatAlt",JSON.stringify(meatAlt));
+
+       saveSeafoodItem = seafoodAlt.find(item => item.id == selectedItem.data("id"));
+       savedItems.push(seafoodAlt);
+       localStorage.setItem("seafoodAlt",JSON.stringify(seafoodAlt));
+
+       savePantryItem = pantryAlt.find(item => item.id == selectedItem.data("id"));
+       savedItems.push(pantryAlt);
+       localStorage.setItem("pantryAlt",JSON.stringify(pantryAlt));
+
+        
+    getUserIngredients() 
+    });
