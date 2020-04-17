@@ -1,9 +1,20 @@
-body, #main {
+body, .card-body {
     background-color: #fad09f;
     color: #d42926;
   }
-
-
+.card-body {
+    background-color: antiquewhite;
+}
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: baseline;
+    align-items: flex-end;
+}
+#sauceLogo {
+    width: 60px;
+    height: auto;
+}
 
 #headertext {
     font-family: 'Montez', cursive;
@@ -11,6 +22,18 @@ body, #main {
     color: #d42926;
     text-align: center;
 }
+
+.card-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    align-content: center;
+}
+
+.card-deck {
+    margin: 20px;
+}
+
 
 img{
     width: "100%";
@@ -21,21 +44,6 @@ img{
     margin-top: 10px;
   }
 
-  #headertext {
-    color: #d42926;
-}
-
-.fa-facebook-square{ 
-    color: rgb(0, 153, 255);
-}
-
-.fa-twitter-square{ 
-        color: rgb(0, 153, 255);
-    }
-
-.fa-instagram-square{ 
-            color: rgb(0, 153, 255);
-        }
 
 .carousel {
     margin-top: 30px;
@@ -51,23 +59,8 @@ img{
     text-decoration: none;
 }
 
-.header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: baseline;
-    align-items: flex-end;
-}
-#sauceLogo {
-    width: 60px;
-    height: auto;
-}
 
 
 
- .card-deck {
-     margin: 20px;
- }
 
- .card-title {
-     align-content: center;
- }
+
