@@ -2,8 +2,8 @@
 
 $(document).ready(function() {
 
-
-    var favorites = [215435,323420,116679,121545,485365,74172,74202,94640,107878,]; //this will be array from local Storage in real life
+       var favorites = JSON.parse(localStorage.getItem(favorites)) 
+    //var favorites = [215435,323420,116679,121545,485365,74172,74202,94640,107878,]; //this will be array from local Storage in real life
     //console.log(favorites.join());
     
 
