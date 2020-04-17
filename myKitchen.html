@@ -13,26 +13,30 @@
         <title>My Kitchen</title>
     </head>
     <body>
-        <!-- <header>     
-            <ol class="header">
-                <li class="logo"><a><img id="sauceLogo" alt="Logo" src="images/sauceCodeLogo2.png"></a></li>
-                <div id="textLogo">Code Sauce</div>
-                <li><a href="www.facebook.com" target="blank" title="Facebook">  <img alt="Facebook" src="images/FB.png" /></a></li>
-                <li><a href="www.twitter.com" target="blank" title="Twitter">  <img alt="Facebook" src="images/Twitter.png" /></a></li>
-                <li><a href="www.instagram.com" target="blank" title="instagram">  <img alt="Facebook" src="images/Instagram.png" /></a></li>
-            </ol>
-        </header>
-        <nav>
-          <div class = "col-md-12">
-            <ul class="menu">
-                <li class="logo"><a href="home.html">Home</a></li>
-                <li class="item"><a href="favorites.html">Favorites</a></li>
-                <li class="item"><a href="myKitchen.html">My Kitchen</a></li>
-                <li class="item"><a href="meals.html">Meal Preferences</a></li>
-                </li>
+     <!--Header-->
+     <div class="container">
+      <div class="row">  
+        <div class="col-sm-12"> 
+          <h1 id="headertext"><span><img id="sauceLogo" alt="Logo" src="images/sauceCodeLogo2.png"></span>The Sauce Code</h1>
+          </div>
+      </div>
+    </div>
+  
+  
+    <!--Nav bar with logo-->
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #d42926">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav ml-auto">
+              <li><a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a></li>
+              <li><a class="nav-item nav-link" href="#">Meal Preferences</a></li>
+              <li><a class="nav-item nav-link" href="#">My Kitchen</a></li>
+              <li><a class="nav-item nav-link" href="#">Favorites</a></li>
             </ul>
-            </div>
-        </nav> -->
+      </div>
+        </nav>
 
             <div class="clearfix">
                 <div class = "col-md-12">
@@ -60,13 +64,18 @@
                        </form>
                    <aside>
                     <div class="card-two">
-                      <h2>Meal Ingredients</h2>
+                      <div class="background">
+                        <div class="transbox">
+                      <h2 class="meal">Meal Ingredients</h2>
                       <p class="meal"><strong>Dairy:</strong> <span id="dairy-ingredients"></span></p>
                       <p class="meal"><strong>Produce:</strong> <span id="produce-ingredients"></span></p>
                       <p class="meal"><strong>Meat:</strong> <span id="meat-ingredients"></span></p>
                       <p class="meal"><strong>Seafood:</strong> <span id="seafood-ingredients"></span></p>
                       <p class="meal"><strong>Pantry:</strong> <span id="pantry-ingredients"></span></p>
-                    <button id="recipes">See Recipes</button>
+                    
+                  </div>
+                  <button class="recipesBtn"><a href="recipes.html"></a>See Recipes</button>
+                </div>
                     </div>
                   </div> 
                     </div>     

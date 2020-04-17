@@ -8,7 +8,7 @@ var dairyAlt = [
 dairyItems = $("#dairyItems")
 dairyAlt.forEach(item => {
    dairyItems.append(`
-   <li data-id="${item.id}">${item.name}<button type="button" data-id="${item.id}"  class="btn btn-secondary">Add Item</button></li> 
+   <li data-id="${item.id}">${item.name}<button type="button" data-type="dairy" data-id="${item.id}"  class="btn btn-secondary">Add Item</button></li> 
    `)
 })  
 
@@ -22,7 +22,7 @@ var produceAlt = [
 produceItems = $("#produceItems")
 produceAlt.forEach(item => {
    produceItems.append(`
-   <li data-id="${item.id}">${item.name}<button type="button" data-id="${item.id}"  class="btn btn-secondary">Add Item</button></li> 
+   <li data-id="${item.id}">${item.name}<button type="button" data-type="produce" data-id="${item.id}"  class="btn btn-secondary">Add Item</button></li> 
    `)
 })
 
@@ -37,7 +37,7 @@ var meatAlt = [
 meatItems = $("#meatItems")
 meatAlt.forEach(item => {
    meatItems.append(`
-   <li data-id="${item.id}">${item.name}<button type="button" data-id="${item.id}"  class="btn btn-secondary">Add Item</button></li> 
+   <li data-id="${item.id}">${item.name}<button type="button" data-type="meat" data-id="${item.id}"  class="btn btn-secondary">Add Item</button></li> 
    `)
 })
 
@@ -52,7 +52,7 @@ var seafoodAlt = [
 seafoodItems = $("#seafoodItems")
 seafoodAlt.forEach(item => {
    seafoodItems.append(`
-   <li data-id="${item.id}">${item.name}<button type="button" data-id="${item.id}"  class="btn btn-secondary">Add Item</button></li> 
+   <li data-id="${item.id}">${item.name}<button type="button" data-type="seafood" data-id="${item.id}"  class="btn btn-secondary">Add Item</button></li> 
    `)
 })
 
@@ -66,7 +66,7 @@ var pantryAlt = [
 pantryItems = $("#pantryItems")
 pantryAlt.forEach(item => {
    pantryItems.append(`
-   <li data-id="${item.id}">${item.name}<button type="button" data-id="${item.id}"  class="btn btn-secondary">Add Item</button></li> 
+   <li data-id="${item.id}">${item.name}<button type="button" data-type="pantry" data-id="${item.id}"  class="btn btn-secondary">Add Item</button></li> 
    `)
 })
 
@@ -74,23 +74,25 @@ pantryAlt.forEach(item => {
 var savedItems = [];
    console.log(savedItems)
 
-   getUserIngredients()
+  
+   function getUserIngredients (type) {
    
-   function getUserIngredients(){
-      var storedDairy = JSON.parse(localStorage.getItem("savedItems"));
-      var storedProduce = JSON.parse(localStorage.getItem("savedItems"));
-      var storedMeat = JSON.parse(localStorage.getItem("savedItems"));
-      var storedSeafood = JSON.parse(localStorage.getItem("savedItems"));
-      var storedPantry = JSON.parse(localStorage.getItem("savedItems"));
+      var userItems = localStorage.getItem(type);
+      return userItems === null ? [] : JSON.parse(userItems);	
+   }
 
 
-
-      return  storedDairy && storedProduce && storedMeat && storedSeafood && storedPantry === null ? [] : JSON.parse(storedDairy, storedProduce, storedMeat, storedSeafood, storedPantry);
- 
+   function renderUserIngredients (view, items) {
+      $(view).text(items.map(item => item.name + ' '))
       
    }
-  
-   
+
+
+   function updateUserIngredients(selectedItem, sourceIngredients,userIngredients,storageItem) {
+      var saveItem = sourceIngredients.find(item => item.id == selectedItem.data("id"));
+      userIngredients.push(saveItem);
+      localStorage.setItem(storageItem,JSON.stringify(userIngredients));
+   }
 
 var addItem = $(".btn");
    
@@ -99,43 +101,32 @@ var addItem = $(".btn");
         var selectedItem = $(event.target);
         console.log(selectedItem.data("id"))
        event.preventDefault();
-       
-      //   if (typeof(Storage) !== "") {
-      //              saveDairyItem = dairyAlt.find(item => item.id == selectedItem.data("id"));
-      //              savedItems.push(dairyAlt);
-      //             localStorage.setItem("dairyAlt",JSON.stringify(dairyAlt)); 
-      //             document.getElementById("dairy-ingredients").innerHTML = localStorage.getItem("dairyAlt");
-      //  }
-      
-       if (typeof(Storage) !== "") {
-       saveDairyItem = dairyAlt.find(item => item.name == selectedItem.data(name));
-       savedItems.push(dairyAlt.name);
-       localStorage.setItem(dairyAlt.name,JSON.stringify(dairyAlt.name)); 
-       document.getElementById("dairy-ingredients").innerHTML = localStorage.getItem(dairyAlt.name);
-      alert(dairyAlt[0].name);
-      //grabs just the name 
-      console.log(dairyAlt[0].name);
+       switch (selectedItem.data("type")) {
+         case 'dairy':
+            updateUserIngredients(selectedItem, dairyAlt, getUserIngredients("dairyAlt"), "dairyAlt")
+            renderUserIngredients("#dairy-ingredients", getUserIngredients("dairyAlt"))
+           break;
+         case 'produce':
+            updateUserIngredients(selectedItem, produceAlt, getUserIngredients("produceAlt"), "produceAlt")
+            renderUserIngredients("#produce-ingredients", getUserIngredients("produceAlt"))
+           break;
+         case 'meat':
+            updateUserIngredients(selectedItem, meatAlt, getUserIngredients("meatAlt"), "meatAlt")
+            renderUserIngredients("#meat-ingredients", getUserIngredients("meatAlt"))
+            break;
+         case 'seafood':
+               updateUserIngredients(selectedItem, seafoodAlt, getUserIngredients("seafoodAlt"), "seafoodAlt")
+               renderUserIngredients("#seafood-ingredients", getUserIngredients("seafoodAlt"))
+               break;
+         case 'pantry':
+                  updateUserIngredients(selectedItem, pantryAlt, getUserIngredients("pantryAlt"), "pantryAlt")
+                  renderUserIngredients("#pantry-ingredients", getUserIngredients("pantryAlt"))
+                  break;
+         
+         default:
        }
-
-          
-     
-       saveProduceItem = produceAlt.find(item => item.id == selectedItem.data("id"));
-       savedItems.push(produceAlt);
-       localStorage.setItem("produceAlt",JSON.stringify(produceAlt));  
-
-       saveMeatItem = meatAlt.find(item => item.id == selectedItem.data("id"));
-       savedItems.push(meatAlt);
-       localStorage.setItem("meatAlt",JSON.stringify(meatAlt));
-
-       saveSeafoodItem = seafoodAlt.find(item => item.id == selectedItem.data("id"));
-       savedItems.push(seafoodAlt);
-       localStorage.setItem("seafoodAlt",JSON.stringify(seafoodAlt));
-
-       savePantryItem = pantryAlt.find(item => item.id == selectedItem.data("id"));
-       savedItems.push(pantryAlt);
-       localStorage.setItem("pantryAlt",JSON.stringify(pantryAlt));
-
-        
-    getUserIngredients() 
     });
 
+         //    saveDairyItem = dairyAlt.find(item => item.id == selectedItem.data("id"));
+         //           savedItems.push(saveDairyItem);
+         //          localStorage.setItem("dairyAlt",JSON.stringify(savedItems)); 
