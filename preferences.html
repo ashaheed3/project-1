@@ -7,35 +7,31 @@
     <link rel="stylesheet" type="text/css" href="pref-style.css">
     </style>
     <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            </div>
-          <div class="col-sm-4">
-            <h1 id="headertext">The Sauce Code</h1>
-            </div>
-            <div class="col-sm-4 header">
-              <a href="www.facebook.com" target="blank" title="Facebook">  <h2 class="fab fa-facebook-square"></h2></a>
-              <a href="www.twitter.com" target="blank" title="Twitter">  <h2 class="fab fa-twitter-square"></h2></a>
-              <a href="www.instagram.com" target="blank" title="instagram">  <h2 class="fab fa-instagram"></h2></a>  
-            </div>
-        </div>
+      <div class="row">  
+        <div class="col-sm-12"> 
+          <h1 id="headertext"><span><img id="sauceLogo" alt="Logo" src="images/theSauceCodeLogo.PNG"></span>The Sauce Code</h1>
+          </div>
       </div>
-
-       <!--Nav bar with logo-->
+    </div>
+  </header>
+  
+  
+    <!--Nav bar with logo-->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #d42926">
-        <a class="navbar-brand" href="#"><img id="sauceLogo" alt="Logo" src="images/sauceCodeLogo2.png"></a>
-          <a class="navbar-brand" href="#">The Sauce Code</a>
-          <div class="d-flex justify-content-end">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ul class="navbar-nav">
-              <li><a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a></li>
-              <li><a class="nav-item nav-link" href="#">My Favorites</a></li>
-              <li><a class="nav-item nav-link" href="#">My Preferences</a></li>
-              <li><a class="nav-item nav-link" href="#">My Kitchen</a></li>
-            </ul>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <div><a id="navBar" class="nav-item nav-link" href="index.html">Home</a></div>
+          <div><a id="navBar" class="nav-item nav-link" href="meals.html">Preferences</a></div>
+          <div><a id="navBar" class="nav-item nav-link active" href="myKitchen.html">My Kitchen<span class="sr-only">(current)</span></a></div>
+          <div><a id="navBar" class="nav-item nav-link" href="favorites.html">Favorites</a></div>
+          <div><a id="navBar" class="nav-item nav-link" href="recipes.html">Recipes</a></div>
+          </div>
+         </div>
+    </nav>
+
             <form class="form-inline">
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-light my-2 my-sm-0 fas fa-search" type="submit" id="searchBtn"></button>
