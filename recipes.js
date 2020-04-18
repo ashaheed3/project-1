@@ -1,4 +1,4 @@
-        var kitchenIngredients = [];
+  var kitchenIngredients = [];
         var recipeIngredients= [];
         var favorites = [];
         var storedFavorites = JSON.parse(localStorage.getItem("favorites"));
@@ -9,6 +9,8 @@
 
         //Get kitchen items from local storage
         function getKitchenItems(){
+          debugger;
+          var foodItems = [];
           var dairy =  JSON.parse(localStorage.getItem("dairyAlt"));
           var produce =  JSON.parse(localStorage.getItem("produceAlt"));
           var meat =  JSON.parse(localStorage.getItem("meatAlt"));
@@ -16,17 +18,35 @@
           var pantry =  JSON.parse(localStorage.getItem("pantryAlt"));
 
 
-          if ((dairy == null)||(produce == null)||(meat == null)||(seafood == null)||(pantry == null)){
-            return;
-          }else{
-
-          dairy.push(...produce, ...meat, ...seafood,...pantry);
-
-        }
           
-          dairy.forEach(element => {
-            kitchenIngredients.push(element[1]);
+          if (Array.isArray(dairy) && dairy.length){
+            foodItems = [...foodItems, ...dairy]
+          }
+
+          if (Array.isArray(produce) && produce.length){
+            foodItems = [...foodItems, ...produce]
+          }
+
+          if(Array.isArray(meat) && meat.length){
+            foodItems =  [...foodItems, ...meat]
+          }
+
+          if(Array.isArray(seafood) && seafood.length){
+            foodItems = [...foodItems, ...seafood]
+          }
+
+          if (Array.isArray(pantry) && pantry.length){
+            foodItems = [...foodItems, ...pantry]
+          }
+
+        if (!Array.isArray(foodItems) && foodItems.length){
+          return
+        }else{
+          
+          foodItems.forEach(element => {
+            kitchenIngredients.push(element.id);
           });
+        }
         }
           
         getKitchenItems();
@@ -145,7 +165,7 @@
             
             recipeIngredients.forEach(ingredient => {
                var ingredientTxt = $(`<div data-id = "${ingredient.id}">${ingredient.name}</div>`);
-
+              
                if ((-1 == kitchenIngredients.indexOf(`${ingredient.id}`))){
                   ingredientTxt.addClass("text-muted")
                }
@@ -182,7 +202,7 @@
 
         $("#search").on("click",function(){
 
-          debugger;
+          // debugger;
 
             // event.preventDefault();
             query = $("#keyword").val();
