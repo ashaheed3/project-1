@@ -58,3 +58,14 @@ img{
 .logo a:hover {
     text-decoration: none;
 }
+#jumbotron2{
+  display: flex;
+  height: 600px;
+  flex-wrap: wrap;
+  align-content: center;
+  background-color: transparent;
+}
+.btn-small{
+    background-color: red;
+    color: seashell;
+}
