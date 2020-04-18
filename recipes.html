@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link 
+      rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+      crossorigin="anonymous">
+    
+    <link 
+      rel="stylesheet" 
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+      <link href="https://fonts.googleapis.com/css2?family=Montez&display=swap" 
+      rel="stylesheet">
+
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" 
+      rel="stylesheet">
+    
+      <link 
+        href="favorites-style.css" 
+        rel="stylesheet">
+
+    <title>Search Recipes</title>
+
+</head>
+
+<body>
+  <!--Header-->
+  <div class="container">
+    <div class="row">  
+      <div class="col-sm-12"> 
+        <h1 id="headertext"><span><img id="sauceLogo" alt="Logo" src="images/sauceCodeLogo2.png"></span>The Sauce Code</h1>
+        </div>
+    </div>
+  </div>
+
+
+  <!--Nav bar with logo-->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #d42926">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav ml-auto">
+            <li><a class="nav-item nav-link" href="index.html">Home</a></li>
+            <li><a class="nav-item nav-link" href="preferences.html">Meal Preferences</a></li>
+            <li><a class="nav-item nav-link" href="myKitchen.html">My Kitchen</a></li>
+            <li><a class="nav-item nav-link" href="favorites.html">Favorites</a></li>
+            <li><a class="nav-item nav-link active" href="recipes.html">Recipes<span class="sr-only">(current)</span></a></li>
+          </ul>
+    </div>
+      </nav>
+  
+
+       
+      
+        <div class="album py-5" style="background-color: #fad09f">
+          <div class="container">
+
+            <div class="row justify-content-center search">
+
+              
+              <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" id = "keyword" placeholder="Search for Recipes" aria-label="Search">
+                <button class="btn btn-primary my-2 my-sm-0 fas fa-search" id="search" type="submit"></button>
+              </form>
+
+        
+              
+            </div>
+      
+            <div class="row" id = "recipeContainer">
+            <!-- Recipe Card  -->
+            </div>
+          </div>
+        </div>
+
+              
+      
+      </main>
+
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+      <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"><\/script>')</script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script></body>
+
+      <script src = "recipes.js"type="text/javascript">
+
+
+
+      </script>
+    
+</body>
+</html>
+
