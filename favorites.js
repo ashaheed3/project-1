@@ -13,7 +13,7 @@ $(document).ready(function() {
     function showFavorites() {
          var recipeId = favorites.join()
  
-         var apiKey = "08f60c4364f74e17b4143c40fa0cff70"
+         var apiKey = "638079db0422474e9dbb911fde92a215"
          var queryURL = `https://api.spoonacular.com/recipes/informationBulk?ids=${recipeId}&apiKey=${apiKey}`;
                
           $.ajax({
