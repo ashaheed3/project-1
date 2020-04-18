@@ -1,0 +1,42 @@
+body {
+    background-color: #fad09f;
+    color: #d42926;
+  }
+
+#headertext {
+    font-family: 'Montez', cursive;
+    font-size: 75px;
+    color: #d42926;
+    text-align: center;
+}
+
+
+.carousel {
+    margin-top: 30px;
+    margin-bottom: 40px; 
+}
+
+
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: baseline;
+    align-items: flex-end;
+}
+#sauceLogo {
+    width: 60px;
+    height: auto;
+}
+
+.card-deck {
+     margin: 80px;   
+ }
+.card-body {
+    background-color: #fad09f;
+
+}
+.card-title {
+    font-family: 'Montez', cursive;
+    font-size: 40px;
+    color: #d42926;}
