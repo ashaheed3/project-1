@@ -184,7 +184,7 @@ li button:hover {
 
 .recipesBtn{
     color:white ;
-    background-color: #D42926;
+    background-color: transparent;
     float: right;
 
 }
