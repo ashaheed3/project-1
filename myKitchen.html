@@ -1,52 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>myFrig</title>
-</head>
-<body>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">  
-        <link rel="icon" href="images/favicon.png">
-        <title>Sauce Code</title>
-    </head>
-        <header>     
-            <ol class="header">
-                <li class="logo"><a><img id="sauceLogo" alt="Logo" src="images/sauceCodeLogo2.png"></a></li>
-                <div id="textLogo">Code Sauce</div>
-                <li><a href="www.facebook.com" target="blank" title="Facebook">  <img alt="Facebook" src="images/FB.png" /></a></li>
-                <li><a href="www.twitter.com" target="blank" title="Twitter">  <img alt="Facebook" src="images/Twitter.png" /></a></li>
-                <li><a href="www.instagram.com" target="blank" title="instagram">  <img alt="Facebook" src="images/Instagram.png" /></a></li>
-            </ol>
-        </header>
-        <nav>
-            <ul class="menu">
-                <li class="logo"><a href="home.html">Home</a></li>
-                <li class="item"><a href="favorites.html">Favorites</a></li>
-                <li class="item"><a href="myKitchen.html">My Kitchen</a></li>
-                <li class="item"><a href="meals.html">Preferences</a></li>
-                </li>
-            </ul>
-        </nav>
+        <link 
+        rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+        crossorigin="anonymous">
+        <link 
+      rel="stylesheet" 
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 
-        <main class="jumbotron">
-                <h1 class="display-3">What's in your Kitchen?</h1>
-        </main>
-        <form>
-            <div class="container-fluid">  
-                  <div class="row h-100">
-                    <p class="col-md-1 my-auto time-block">Ingredient 1</p>
-                    <div class="inputText col-md-9"><input type="text" name="local" class="form-control" id="textarea"  placeholder="Enter Ingredients Here"></div><button type="button" class="saveBtn col-sm-1">Save</button>
+      <link href="https://fonts.googleapis.com/css2?family=Montez&display=swap" 
+      rel="stylesheet">
+
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" 
+      rel="stylesheet">
+    
+        <link rel="stylesheet" href="myKitchen.css">  
+        <link rel="icon" href="images/favicon.png">
+        <title>My Kitchen</title>
+    </head>
+    <body>
+     <!--Header-->
+     <header>
+     <div class="container">
+      <div class="row">  
+        <div class="col-sm-12"> 
+          <h1 id="headertext"><span><img id="sauceLogo" alt="Logo" src="images/theSauceCodeLogo.PNG"></span>The Sauce Code</h1>
+          </div>
+      </div>
+    </div>
+  </header>
+  
+  
+    <!--Nav bar with logo-->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #d42926">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <div><a id="navBar" class="nav-item nav-link" href="index.html">Home</a></div>
+          <div><a id="navBar" class="nav-item nav-link" href="meals.html">Preferences</a></div>
+          <div><a id="navBar" class="nav-item nav-link active" href="myKitchen.html">My Kitchen<span class="sr-only">(current)</span></a></div>
+          <div><a id="navBar" class="nav-item nav-link" href="favorites.html">Favorites</a></div>
+          <div><a id="navBar" class="nav-item nav-link" href="recipes.html">Recipes</a></div>
+          </div>
+         </div>
+    </nav>
+
+            <div class="clearfix">
+                <div class = "col-md-12">
+                <div class="col-md-6 card">
+                  <form>
+                  <h2 class="kitchen">What's in you Kitchen?</h2>
+                  <div class = "card-body">
+                    <h3>Dairy</h3>
+                      <ul id = "dairyItems"></ul>
+                      <div id="msg"></div>
+                        <h3>Produce</h3>
+                          <ul id = "produceItems"></ul>
+                          <div id="msgProduce"></div>
+                            <h3>Meat</h3>
+                              <ul id = "meatItems"></ul>
+                              <div id="msgMeat"></div>
+                                <h3>Seafood</h3>
+                                   <ul id = "seafoodItems"></ul>
+                                   <div id="msgSeafood"></div>
+                                   <h3>Pantry</h3>
+                                   <div id="msgPantry"></div>
+                                   <ul id = "pantryItems"></ul>
+                                </div>
+                            </div>
+                       </form>
+                   <aside>
+                    <div class="card-two">
+                      <div class="background">
+                        <div class="transbox">
+                      <h2 class="meal">Meal Ingredients</h2>
+                      <p class="meal"><strong>Dairy:</strong> <span id="dairy-ingredients"></span></p>
+                      <p class="meal"><strong>Produce:</strong> <span id="produce-ingredients"></span></p>
+                      <p class="meal"><strong>Meat:</strong> <span id="meat-ingredients"></span></p>
+                      <p class="meal"><strong>Seafood:</strong> <span id="seafood-ingredients"></span></p>
+                      <p class="meal"><strong>Pantry:</strong> <span id="pantry-ingredients"></span></p>
+                    
                   </div>
-        </form>
+                  <button class="recipesBtn"><a href="recipes.html">See Recipes</a></button>
+                </div>
+                    </div>
+                  </div> 
+                    </div>     
+                </aside>
+
+
+
+
+      
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="myKitchen.js"></script>
 </body>
 </html>

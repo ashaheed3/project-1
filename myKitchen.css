@@ -1,0 +1,302 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, .card-body {
+    background-color: #fad09f;
+    color: #d42926;
+  }
+
+h2 {
+    text-align: center;
+}
+
+header {
+    background-color: #FAD09F;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: baseline;
+    align-items: flex-end;  
+}
+
+#headertext {
+    font-family: 'Montez', cursive;
+    font-size: 75px;
+    color: #d42926;
+    text-align: center;
+}
+
+#navBar{
+    background-color: transparent;
+}
+#navBar:hover{
+    color: white;
+    background-color: transparent;
+    font-weight: bold
+}
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+    color: black;
+    border-radius: 0;
+    border-bottom: 10px solid black;
+  }
+
+  
+img {
+    width: auto;
+    height: auto;
+  
+}
+
+.img li a:hover{
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 10px;
+}
+
+#sauceLogo {
+    width: 100px;
+    height: auto;
+
+}
+
+#recipes {
+    float: right;
+    color: white;
+    background-color: #D42926;
+}
+
+.card {
+    background-color:transparent;
+    border: 1px solid #eceff1;
+    border-radius: 8px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0,
+      rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
+    margin: 2%;
+    margin-top: 80px;
+    padding: 20px;
+    width: 46%;
+    overflow: hidden;
+    position: relative;
+    float: left;
+  
+  }
+  .card-two {
+    background-color: #fff;
+    background-image: url("images/foodFive.jpg");
+    background-size: 1850px;
+    background-position: bottom;
+    border: 1px solid #eceff1;
+    border-radius: 8px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0,
+      rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
+      color: whitesmoke;
+      font-weight: bolder;
+      font-size: larger;
+    margin: 2%;
+    margin-top: 80px;
+    padding: 20px;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    width: 46%;
+    overflow: hidden;
+    position: relative;
+    float: left;
+   
+   
+  }
+
+ 
+  
+ul {
+    list-style-type: none;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+    background-color:white;
+    color: #D42926;
+    padding: 10px;
+}
+
+.menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+}
+
+
+input {
+  height: 50px;
+  width: 100%;
+  padding: 6px;
+  margin-top: 10px;
+  font-size: 2.4em;
+  border: none;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  background-color: white;
+}
+li {
+  height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #D42926;
+  color: white;
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+li:before {
+  content: "\200B";
+  position: absolute;
+}
+li::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+li button {
+  float: right;
+  border: none;
+  height: 40px;
+  cursor: pointer;
+  background-color: #D42926;
+  color: white;
+  font-size: 1em;
+}
+li button:hover {
+  background-color: #D42926;
+}
+.todos {
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.recipesBtn{
+    color:white ;
+    background-color: #D42926;
+    float: right;
+
+}
+.btn {
+    color: white;
+    background-color: transparent;
+
+}
+
+.btn:hover {
+    color: white;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.meal {
+    text-align: center;
+    color: black;
+   
+    
+}
+
+div.background {
+    
+    border: 2px solid black;
+  }
+  
+  div.transbox {
+    margin: 200px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+  }
+  
+  div.transbox p {
+    margin: 5%;
+    font-weight: bold;
+    color: #000000;
+  }
+
+
+
+
+
+
+  /* Mobile menu
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle {
+    order: 1;
+}
+.item.button {
+    order: 2;
+}
+.item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+}
+.item.active {
+    display: block;
+}
+
+
+  
+
+/* Tablet menu */
+/* @media all and (min-width: 600px) {
+    .menu {
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+    }
+    .toggle {
+        flex: 1;
+        text-align: right;
+    }
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        order: 2;
+    }
+    
+} */
+
+/* Desktop menu */
+/* @media all and (min-width: 900px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+    }
+  
+    .menu li {
+        padding: 15px 10px;
+    }
+    
+} */ 
