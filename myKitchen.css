@@ -191,7 +191,9 @@ li button:hover {
 .recipesBtn a:hover {
     text-decoration: none;
     background-color: transparent;
-    color: #D42926;}
+    color: #D42926;
+     font-weight: bolder;
+}
 
 
 .btn {
