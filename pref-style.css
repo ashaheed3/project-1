@@ -1,0 +1,60 @@
+body, .card-body {
+    background-color: #fad09f;
+    color: #d42926;
+  }
+.card-body {
+    background-color: antiquewhite;
+}
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: baseline;
+    align-items: flex-end;
+}
+#sauceLogo {
+    width: 60px;
+    height: auto;
+}
+
+#headertext {
+    font-family: 'Montez', cursive;
+    font-size: 75px;
+    color: #d42926;
+    text-align: center;
+}
+
+.card-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    align-content: center;
+}
+
+.card-deck {
+    margin: 20px;
+}
+
+
+img{
+    width: "100%";
+    height: "225";
+  }
+  
+  button{
+    margin-top: 10px;
+  }
+
+
+.carousel {
+    margin-top: 30px;
+    margin-bottom: 40px; 
+}
+
+.logo a,
+.toggle a {
+    font-size: 20px;
+}
+
+.logo a:hover {
+    text-decoration: none;
+}
