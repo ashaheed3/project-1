@@ -58,7 +58,7 @@ img{
 .logo a:hover {
     text-decoration: none;
 }
-.jumberton{
+.jumbotron{
   display: flex;
   height: 600px;
   flex-wrap: wrap;
