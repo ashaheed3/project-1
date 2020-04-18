@@ -9,7 +9,7 @@
 
         //Get kitchen items from local storage
         function getKitchenItems(){
-          debugger;
+          
           var foodItems = [];
           var dairy =  JSON.parse(localStorage.getItem("dairyAlt"));
           var produce =  JSON.parse(localStorage.getItem("produceAlt"));
