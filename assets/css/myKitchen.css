@@ -86,7 +86,7 @@ img {
   }
   .card-two {
     background-color: #fff;
-    background-image: url("images/foodFive.jpg");
+    background-image: url("../images/foodFive.jpg");
     background-size: 1850px;
     background-position: bottom;
     border: 1px solid #eceff1;
